@@ -9,12 +9,29 @@
 import UIKit
 
 class ViewController: UIViewController {
+    
+    @IBOutlet weak var numberLabel: UILabel!
+    
+    var count = 0
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        numberLabel.text = String(count)
+       
     }
-
+    
+    @IBAction func plusOneButtonTap(_ sender: Any) {
+        count += 1
+        numberLabel.text = String(count)
+    }
+    
+    
+    @IBAction func clearButtonTap(_ sender: Any) {
+        count = 0
+        numberLabel.text = String(count)
+    }
+    
 
 }
 
